@@ -5,11 +5,11 @@
 #include <string.h>
 #endif
 
-//#if defined(_USRDLL)
-//    #define CC_DLL     __declspec(dllexport)
-//#else         /* use a DLL library */
-//    #define CC_DLL     __declspec(dllimport)
-//#endif
+/*#if defined(_USRDLL)
+    #define CC_DLL     __declspec(dllexport)
+#else 
+    #define CC_DLL     __declspec(dllimport)
+#endif*/
 
 #define CC_DLL
 

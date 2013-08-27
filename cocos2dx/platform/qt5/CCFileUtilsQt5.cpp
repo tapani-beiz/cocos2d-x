@@ -33,7 +33,7 @@
 #include "ccTypes.h"
 #include "ccMacros.h"
 
-#include <unistd.h>
+//#include <unistd.h>
 #include <sys/stat.h>
 
 #include <QFile>

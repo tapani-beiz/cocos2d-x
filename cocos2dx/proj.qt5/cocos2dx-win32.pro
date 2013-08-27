@@ -1,4 +1,4 @@
-include(common.pri)
+include(common-win32.pri)
 
 QT       -= gui
 QT       += opengl
@@ -7,6 +7,7 @@ TARGET = cocos2dx-win32
 TEMPLATE = lib
 
 DEFINES += COCOS2DXWIN32_LIBRARY
+CONFIG += staticlib
 
 SOURCES += ../actions/CCAction.cpp \
 ../actions/CCActionCamera.cpp \
@@ -135,45 +136,35 @@ SOURCES += ../actions/CCAction.cpp \
 ../CCScheduler.cpp \
 ../ccFPSImages.c \
 ../ccTypes.cpp \
-../extensions/CCBReader/CCBAnimationManager.cpp
-../extensions/CCBReader/CCBFileLoader.cpp
-../extensions/CCBReader/CCBKeyframe.cpp
-../extensions/CCBReader/CCBReader.cpp
-../extensions/CCBReader/CCBSequence.cpp
-../extensions/CCBReader/CCBSequenceProperty.cpp
-../extensions/CCBReader/CCBValue.cpp
-../extensions/CCBReader/CCControlButtonLoader.cpp
-../extensions/CCBReader/CCControlLoader.cpp
-../extensions/CCBReader/CCLabelBMFontLoader.cpp
-../extensions/CCBReader/CCLabelTTFLoader.cpp
-../extensions/CCBReader/CCLayerColorLoader.cpp
-../extensions/CCBReader/CCLayerGradientLoader.cpp
-../extensions/CCBReader/CCLayerLoader.cpp
-../extensions/CCBReader/CCMenuItemImageLoader.cpp
-../extensions/CCBReader/CCMenuItemLoader.cpp
-../extensions/CCBReader/CCNode+CCBRelativePositioning.cpp
-../extensions/CCBReader/CCNodeLoader.cpp
-../extensions/CCBReader/CCNodeLoaderLibrary.cpp
-../extensions/CCBReader/CCParticleSystemQuadLoader.cpp
-../extensions/CCBReader/CCScale9SpriteLoader.cpp
-../extensions/CCBReader/CCScrollViewLoader.cpp
-../extensions/CCBReader/CCSpriteLoader.cpp
+#../../extensions/CCBReader/CCBAnimationManager.cpp \
+#../../extensions/CCBReader/CCBFileLoader.cpp \
+#../../extensions/CCBReader/CCBKeyframe.cpp \
+#../../extensions/CCBReader/CCBReader.cpp \
+#../../extensions/CCBReader/CCBSequence.cpp \
+#../../extensions/CCBReader/CCBSequenceProperty.cpp \
+#../../extensions/CCBReader/CCBValue.cpp \
+#../../extensions/CCBReader/CCControlButtonLoader.cpp \
+#../../extensions/CCBReader/CCControlLoader.cpp \
+#../../extensions/CCBReader/CCLabelBMFontLoader.cpp \
+#../../extensions/CCBReader/CCLabelTTFLoader.cpp \
+#../../extensions/CCBReader/CCLayerColorLoader.cpp \
+#../../extensions/CCBReader/CCLayerGradientLoader.cpp \
+#../../extensions/CCBReader/CCLayerLoader.cpp \
+#../../extensions/CCBReader/CCMenuItemImageLoader.cpp \
+#../../extensions/CCBReader/CCMenuItemLoader.cpp \
+#../../extensions/CCBReader/CCNode+CCBRelativePositioning.cpp \
+#../../extensions/CCBReader/CCNodeLoader.cpp \
+#../../extensions/CCBReader/CCNodeLoaderLibrary.cpp \
+#../../extensions/CCBReader/CCParticleSystemQuadLoader.cpp \
+#../../extensions/CCBReader/CCScale9SpriteLoader.cpp \
+#../../extensions/CCBReader/CCScrollViewLoader.cpp \
+#../../extensions/CCBReader/CCSpriteLoader.cpp \
 ../cocos2d.cpp
 
 # Headers with QObject subclasses (will be processed by moc)
 HEADERS += ../platform/qt5/AccelerometerListener.h
 HEADERS += ../platform/qt5/win32/CCPlatformDefine.h
         
-INCLUDEPATH += ../
-INCLUDEPATH += ../include
-INCLUDEPATH += ../platform
-INCLUDEPATH += ../platform/qt5
-INCLUDEPATH += ../platform/qt5/win32
-INCLUDEPATH += ../kazmath/include
-INCLUDEPATH += ../../extensions
-INCLUDEPATH += ../../extensions/CCBReader
-INCLUDEPATH += ../../extensions/GUI/CCControlExtension
-INCLUDEPATH += ../../extensions/GUI/CCControlExtension
 #INCLUDEPATH += ../../external/chipmunk/include/chipmunk
 #INCLUDEPATH += ../../extensions/network
 #INCLUDEPATH += ../../extensions/Components
@@ -187,9 +178,6 @@ INCLUDEPATH += ../platform/third_party/win32/libjpeg
 INCLUDEPATH += ../platform/third_party/win32/libtiff
 INCLUDEPATH += ../platform/third_party/win32/libwebp
 
-LIBS += -L$$PWD/../platform/third_party/win32/libraries
-LIBS += -llibtiff -llibjpeg -llibpng -llibzlib -llibwebp -lglew32 -lopengl32
-
 unix:!symbian {
     maemo5 {
         target.path = /opt/usr/lib
@@ -198,3 +186,6 @@ unix:!symbian {
     }
     INSTALLS += target
 }
+
+target.path = ../../lib
+INSTALLS += target

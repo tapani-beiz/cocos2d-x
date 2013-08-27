@@ -10,5 +10,5 @@ SOURCES += main.cpp
 SOURCES += ../Classes/AppDelegate.cpp
 SOURCES += ../Classes/HelloWorldScene.cpp
 
-LIBS += $${LINK_AGAINST_COCOS2DX}
+LIBS += -L$$PWD/../../../../Debug/cocos2dx/proj.qt5/debug -lcocos2dx-win32
 
