@@ -221,7 +221,7 @@ THE SOFTWARE.
     #include "platform/qt5/CCApplication.h"
     #include "platform/qt5/CCEGLView.h"
     #include "platform/qt5/CCGL.h"
-    #include "platform/qt5/CCStdC.h"
+    #include "platform/qt5/win32/CCStdC.h"
 #endif // CC_TARGET_PLATFORM == CC_PLATFORM_QT5
 
 // script_support

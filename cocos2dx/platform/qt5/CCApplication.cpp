@@ -26,8 +26,8 @@
  **/
 
 #include "CCApplication.h"
-#include <unistd.h>
-#include <sys/time.h>
+//#include <unistd.h>
+//#include <sys/time.h>
 #include <string>
 #include "CCDirector.h"
 #include "platform/CCFileUtils.h"
